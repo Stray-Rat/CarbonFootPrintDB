@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+app.use(express.json());
+
 const port = 5000;
 const pool = require('./db');
 
@@ -9,6 +11,8 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+
 
 console.log(pool);
 
@@ -73,12 +77,126 @@ app.get('/api/survey-results-view', (req, res) => {
     console.log('survey results view');
 });
 
+app.post('/api/insert-student', (req, res) => {
+    const { id, name, major  } = req.body;
+    const query = 'INSERT INTO Students (StudentID, StudentName, StudentMajor) VALUES (?, ?, ?)';
+    const values = [id, name, major];
+  
+    pool.query(query, values, (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error inserting into database');
+        } else {
+            console.log(results);
+            res.send('Inserted successfully');
+        }
+    });
+});
+
+app.post('/api/insert-course', (req, res) => {
+    const { id, name } = req.body;
+    const query = 'INSERT INTO Courses (CourseID, CourseName) VALUES (?, ?)';
+    const values = [id, name];
+  
+    pool.query(query, values, (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error inserting into database');
+        } else {
+            console.log(results);
+            res.send('Inserted successfully');
+        }
+    });
+});
+
+app.post('/api/insert-enrollments', (req, res) => {
+    const { enrollment, student, course, instructor, date  } = req.body;
+    const query = 'INSERT INTO Enrollments (EnrollmentID, StudentID, CourseID, InstructorID, EnrollmentDate) VALUES (?, ?, ?, ?, ?)';
+    const values = [enrollment, student, course, instructor, date];
+  
+    pool.query(query, values, (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error inserting into database');
+        } else {
+            console.log(results);
+            res.send('Inserted successfully');
+        }
+    });
+});
+
+app.post('/api/insert-roles', (req, res) => {
+    const { id, name } = req.body;
+    const query = 'INSERT INTO Roles (RoleID, RoleName) VALUES (?, ?)';
+    const values = [id, name];
+  
+    pool.query(query, values, (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error inserting into database');
+        } else {
+            console.log(results);
+            res.send('Inserted successfully');
+        }
+    });
+});
+
+app.post('/api/insert-demographics', (req, res) => {
+    const { id, age, gender, ethnicity, address } = req.body;
+    const query = 'INSERT INTO Demographics (StudentID, Age, Gender, Ethnicity, Address) VALUES (?, ?, ?, ?, ?)';
+    const values = [id, age, gender, ethnicity, address];
+  
+    pool.query(query, values, (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error inserting into database');
+        } else {
+            console.log(results);
+            res.send('Inserted successfully');
+        }
+    });
+});
+
+app.post('/api/insert-survey', (req, res) => {
+    const { respondent, role, student, isStudent, isVolunteer, isProfessor, susGarden, cali, argo, scale, time } = req.body;
+    const query = 'INSERT INTO SurveyResponse (RespondentID, RoleID, studentID, IsStudent, IsVolunteer, IsProfessor, SustainableGardening, CaliforniaNativeGarden, ArgoHoodKnowledge, ReducingFootprintScale, Timestamp) VALUES (?, ?, ?, ?, ?, ?, ? ,? ,? ,? ,?)';
+    const values = [respondent, role, student, isStudent, isVolunteer, isProfessor, susGarden, cali, argo, scale, time];
+  
+    pool.query(query, values, (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error inserting into database');
+        } else {
+            console.log(results);
+            res.send('Inserted successfully');
+        }
+    });
+});
+
+app.post('/api/insert-instructor', (req, res) => {
+    const { id, name } = req.body;
+    const query = 'INSERT INTO instructors (InstructorID, InstructorName) VALUES (?, ?)';
+    const values = [id, name];
+  
+    pool.query(query, values, (error, results) => {
+        if (error) {
+            console.error(error);
+            res.status(500).send('Error inserting into database');
+        } else {
+            console.log(results);
+            res.send('Inserted successfully');
+        }
+    });
+});
+
+
+
 app.use(express.static(path.join(__dirname, 'client/public')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/public/index.html'));
+    res.sendFile(path.join(__dirname+'/client/public/index.html'));
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port ${port}`);
 });

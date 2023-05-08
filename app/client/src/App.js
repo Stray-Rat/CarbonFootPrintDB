@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import ViewTable from './ViewTable/ViewTable';
+import InsertForm from './InsertForms/InsertForm';
 
 function App() {
   const [selectedView, setSelectedView] = useState('');
@@ -41,7 +42,10 @@ function App() {
 
       </select>
       {loading ? <p>Loading...</p> : jsonData.length > 0 ? <ViewTable data={jsonData} /> : null}
-      
+
+      <div>
+        <InsertForm />
+      </div>
     </div>
   );
 }
