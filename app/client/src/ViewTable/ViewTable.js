@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './vt.css';
 function ViewTable(props) {
   const keys = Object.keys(props.data[0]);
 
