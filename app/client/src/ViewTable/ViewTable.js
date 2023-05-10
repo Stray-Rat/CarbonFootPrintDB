@@ -4,6 +4,7 @@ function ViewTable(props) {
   const keys = Object.keys(props.data[0]);
 
   return (
+    <div className='table-container'>
     <table>
       <thead>
         <tr>
@@ -22,6 +23,7 @@ function ViewTable(props) {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 
