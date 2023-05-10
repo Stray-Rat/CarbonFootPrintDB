@@ -36,15 +36,15 @@ function Student() {
         <form onSubmit={handleSubmit}>
             <label>
                 Student ID:
-                <input type="text" value={id} onChange={event => setID(event.target.value)} />
+                <input type="text" value={id} onChange={event => setID(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Student Name:
-                <input type="text" value={name} onChange={event => setName(event.target.value)} />
+                <input type="text" value={name} onChange={event => setName(event.target.value)} placeholder='Enter name' />
             </label>
             <label>
                 Student Major:
-                <input type="text" value={major} onChange={event => setMajor(event.target.value)} />
+                <input type="text" value={major} onChange={event => setMajor(event.target.value)}placeholder='Enter Major' />
             </label>
             <button type="submit">Submit</button>
         </form>
@@ -85,11 +85,11 @@ function Course() {
         <form onSubmit={handleSubmit}>
             <label>
                 Course ID:
-                <input type="text" value={id} onChange={event => setID(event.target.value)} />
+                <input type="text" value={id} onChange={event => setID(event.target.value)} placeholder='Enter ##' />
             </label>
             <label>
                 Course Name:
-                <input type="text" value={name} onChange={event => setName(event.target.value)} />
+                <input type="text" value={name} onChange={event => setName(event.target.value)} placeholder='Enter Name' />
             </label>
             <button type="submit">Submit</button>
         </form>
@@ -130,11 +130,11 @@ function Instructor() {
         <form onSubmit={handleSubmit}>
             <label>
                 Instructor ID:
-                <input type="text" value={id} onChange={event => setID(event.target.value)} />
+                <input type="text" value={id} onChange={event => setID(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Instructor Name:
-                <input type="text" value={name} onChange={event => setName(event.target.value)} />
+                <input type="text" value={name} onChange={event => setName(event.target.value)}placeholder='Enter Name' />
             </label>
             <button type="submit">Submit</button>
         </form>
@@ -184,23 +184,23 @@ function Enrollment() {
         <form onSubmit={handleSubmit}>
             <label>
                 Enrollment ID:
-                <input type="text" value={enrollment} onChange={event => setEnrollment(event.target.value)} />
+                <input type="text" value={enrollment} onChange={event => setEnrollment(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Student ID:
-                <input type="text" value={student} onChange={event => setStudent(event.target.value)} />
+                <input type="text" value={student} onChange={event => setStudent(event.target.value)} placeholder='Enter ##' />
             </label>
             <label>
                 Course ID:
-                <input type="text" value={course} onChange={event => setCourse(event.target.value)} />
+                <input type="text" value={course} onChange={event => setCourse(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Instructor ID:
-                <input type="text" value={instructor} onChange={event => setInstructor(event.target.value)} />
+                <input type="text" value={instructor} onChange={event => setInstructor(event.target.value)} placeholder='Enter ##' />
             </label>
             <label>
                 Enrollment Date:
-                <input type="text" value={date} onChange={event => setDate(event.target.value)} />
+                <input type="text" value={date} onChange={event => setDate(event.target.value)} placeholder='Enter MM-DD-YR'/>
             </label>
             <button type="submit">Submit</button>
         </form>
@@ -241,11 +241,11 @@ function Roles() {
         <form onSubmit={handleSubmit}>
             <label>
                 Role ID:
-                <input type="text" value={id} onChange={event => setID(event.target.value)} />
+                <input type="text" value={id} onChange={event => setID(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Role Name:
-                <input type="text" value={name} onChange={event => setName(event.target.value)} />
+                <input type="text" value={name} onChange={event => setName(event.target.value)} placeholder='Enter Name'/>
             </label>
             <button type="submit">Submit</button>
         </form>
@@ -294,23 +294,23 @@ function Demographics() {
         <form onSubmit={handleSubmit}>
             <label>
                 Student ID:
-                <input type="text" value={id} onChange={event => setID(event.target.value)} />
+                <input type="text" value={id} onChange={event => setID(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Age:
-                <input type="text" value={age} onChange={event => setAge(event.target.value)} />
+                <input type="text" value={age} onChange={event => setAge(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Gender:
-                <input type="text" value={gender} onChange={event => setGender(event.target.value)} />
+                <input type="text" value={gender} onChange={event => setGender(event.target.value)} placeholder='Enter Gender'/>
             </label>
             <label>
                 Ethnicity:
-                <input type="text" value={ethnicity} onChange={event => setEthnicity(event.target.value)} />
+                <input type="text" value={ethnicity} onChange={event => setEthnicity(event.target.value)} placeholder='Enter Ethnicity'/>
             </label>
             <label>
                 Address:
-                <input type="text" value={address} onChange={event => setAddress(event.target.value)} />
+                <input type="text" value={address} onChange={event => setAddress(event.target.value)} placeholder='Enter Street,State,Zip'/>
             </label>
             
             <button type="submit">Submit</button>
@@ -370,47 +370,47 @@ function Survey() {
         <form onSubmit={handleSubmit}>
             <label>
                 Respondent ID:
-                <input type="text" value={respondent} onChange={event => setRespondent(event.target.value)} />
+                <input type="text" value={respondent} onChange={event => setRespondent(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Role ID:
-                <input type="text" value={role} onChange={event => setRole(event.target.value)} />
+                <input type="text" value={role} onChange={event => setRole(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Student ID:
-                <input type="text" value={student} onChange={event => setStudent(event.target.value)} />
+                <input type="text" value={student} onChange={event => setStudent(event.target.value)} placeholder='Enter ##'/>
             </label>
             <label>
                 Is Student?:
-                <input type="text" value={isStudent} onChange={event => setIsStudent(event.target.value)} />
+                <input type="text" value={isStudent} onChange={event => setIsStudent(event.target.value)} placeholder='Enter T/F'/>
             </label>
             <label>
                 Is Volunteer?:
-                <input type="text" value={isVolunteer} onChange={event => setIsVolunteer(event.target.value)} />
+                <input type="text" value={isVolunteer} onChange={event => setIsVolunteer(event.target.value)} placeholder='Enter T/F'/>
             </label>
             <label>
                 Is Professor?:
-                <input type="text" value={isProfessor} onChange={event => setIsProfessor(event.target.value)} />
+                <input type="text" value={isProfessor} onChange={event => setIsProfessor(event.target.value)} placeholder='Enter T/F'/>
             </label>
             <label>
                 Is Sustainble Garden?:
-                <input type="text" value={susGarden} onChange={event => setSusGarden(event.target.value)} />
+                <input type="text" value={susGarden} onChange={event => setSusGarden(event.target.value)} placeholder='Enter T/F'/>
             </label>
             <label>
                 Is California Native Garden?:
-                <input type="text" value={cali} onChange={event => setCali(event.target.value)} />
+                <input type="text" value={cali} onChange={event => setCali(event.target.value)} placeholder='Enter T/F'/>
             </label>
             <label>
                 Is Argohood?:
-                <input type="text" value={argo} onChange={event => setArgo(event.target.value)} />
+                <input type="text" value={argo} onChange={event => setArgo(event.target.value)} placeholder='Enter T/F'/>
             </label>
             <label>
                 Reducing Footprint Scale:
-                <input type="text" value={scale} onChange={event => setScale(event.target.value)} />
+                <input type="text" value={scale} onChange={event => setScale(event.target.value)} placeholder='Range 1-10'/>
             </label>
             <label>
                 Timestamp:
-                <input type="text" value={time} onChange={event => setTime(event.target.value)} />
+                <input type="text" value={time} onChange={event => setTime(event.target.value)} placeholder='MM-DD-YR'/>
             </label>
             
             <button type="submit">Submit</button>
@@ -447,8 +447,8 @@ function InsertForms() {
     }
 
     return (
-        <div>
-            <select value={formType} onChange={handleSelectChange}>
+        <div className='response-options'>
+            <select id="view" value={formType} onChange={handleSelectChange}>
                 <option value="Student">Student</option>
                 <option value="Course">Course</option>
                 <option value="Instructor">Instructor</option>

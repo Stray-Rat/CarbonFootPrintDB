@@ -28,11 +28,15 @@ function App() {
   }, [selectedView]);
 
   return (
-    <div>
-      <label htmlFor="view">Select a view:</label>
+    <div className='header'> Sustainable Solutions Campaign
+    <div className='main-view'>
+      <div className='response-title'>Submit A Response</div>
+      <InsertForm/>
+      <div>
+      <div className='view-title'>Select A View</div>
       <select id="view" value={selectedView} onChange={handleViewChange}>
         <option value="">-- Select a view --</option>
-        <option value="http://localhost:5000/api/instructor-course-view">Instruct Courses</option>
+        <option value="http://localhost:5000/api/instructor-course-view">Instructor Courses</option>
         <option value="http://localhost:5000/api/nonstudent-view">Non-Student Survey Count</option>
         <option value="http://localhost:5000/api/professor-enrollment-count-view">Professor Enrollment Count</option>
         <option value="http://localhost:5000/api/student-demographics-view">Student Demographics</option>
@@ -41,12 +45,11 @@ function App() {
         <option value="http://localhost:5000/api/survey-results-view">Survey Results</option>
 
       </select>
-      {loading ? <p>Loading...</p> : jsonData.length > 0 ? <ViewTable data={jsonData} /> : null}
-
-      <div>
-        <InsertForm />
+      {loading ? <p className='loading'>Loading...</p> : jsonData.length > 0 ? <ViewTable data={jsonData} /> : null}
       </div>
     </div>
+    </div>
+    
   );
 }
 
